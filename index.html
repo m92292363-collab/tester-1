@@ -18,11 +18,10 @@
         :root {
             --primary-dark: #1e3d3a;
             --primary-teal: #2b6f6b;
-            /* LIGHTER ORANGE - softer but still vibrant */
-            --primary-accent: #FFB347; /* Lighter orange */
-            --accent-secondary: #FFC87A; /* Soft peach */
-            --accent-bright: #FFA07A; /* Light salmon */
-            --accent-glow: rgba(255, 179, 71, 0.5); /* Light orange glow */
+            --primary-accent: #FFB347;
+            --accent-secondary: #FFC87A;
+            --accent-bright: #FFA07A;
+            --accent-glow: rgba(255, 179, 71, 0.5);
             
             --text-dark: #1e2b2f;
             --text-soft: #2b4743;
@@ -36,25 +35,22 @@
             --tab-active: #ffffff;
             --tab-border: #d0d0d0;
             --nusrat-blue: #1e3a5f;
-            --nusrat-accent: #FFB347; /* Lighter orange */
+            --nusrat-accent: #FFB347;
             --footer-bg: #2b5a4a;
             --footer-text: #f0f0f0;
             --footer-text-light: #e0e0e0;
-            --footer-heading: #FFB347; /* Lighter orange */
+            --footer-heading: #FFB347;
             
-            /* Social media brand colors */
             --facebook-color: #1877f2;
             --instagram-color: #e4405f;
             --youtube-color: #ff0000;
             
-            /* Login section colors */
             --login-student: #1e5a3a;
             --login-teacher: #2b5a4a;
-            --login-hover: #FFB347; /* Lighter orange */
+            --login-hover: #FFB347;
             
-            /* News section colors */
             --news-overlay: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
-            --category-bg: #FFB347; /* Lighter orange */
+            --category-bg: #FFB347;
         }
 
         html {
@@ -85,7 +81,7 @@
             cursor: pointer;
         }
 
-        /* ===== NAVBAR - WITH LANGUAGE ON LEFT, LOGO ON RIGHT ===== */
+        /* ===== NAVBAR ===== */
         .navbar {
             display: flex;
             align-items: center;
@@ -102,7 +98,6 @@
             align-items: center;
         }
 
-        /* Language switcher - smaller size on LEFT */
         .lang-switch {
             display: flex;
             align-items: center;
@@ -136,7 +131,6 @@
             gap: 1rem;
         }
 
-        /* School Logo Container - Ready for your transparent PNG */
         .school-logo {
             width: 60px;
             height: 60px;
@@ -160,25 +154,21 @@
             white-space: nowrap;
         }
 
-        /* ===== SEARCH BAR ===== */
+        /* ===== SEARCH BAR - STATIC AND SHORTER ===== */
         .search-section {
-            margin: 1.5rem 0 1rem;
+            margin: 0.5rem 0 0.4rem;
             width: 100%;
             display: flex;
             justify-content: center;
-            padding: 0 0.5rem;
+            align-items: center;
+            padding: 0;
         }
 
         .search-container {
-            width: 100%;
+            width: 85%;
             max-width: 350px;
             margin: 0 auto;
             position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .search-container.expanded {
-            max-width: 450px;
         }
 
         .search-wrapper {
@@ -188,25 +178,22 @@
             background: white;
             border-radius: 40px;
             border: 1px solid var(--search-border);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 48px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            height: 32px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
             width: 100%;
         }
 
         .search-wrapper:focus-within {
             border-color: var(--primary-accent);
-            box-shadow: 
-                0 0 0 4px rgba(255, 179, 71, 0.2),
-                0 0 15px 2px var(--accent-glow);
-            transform: scale(1.02);
+            box-shadow: 0 0 0 4px rgba(255, 179, 71, 0.2);
         }
 
         .search-icon {
             position: absolute;
-            left: 16px;
+            left: 10px;
             color: #999;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             pointer-events: none;
             z-index: 1;
             transition: color 0.3s ease;
@@ -219,20 +206,21 @@
         .search-input {
             width: 100%;
             height: 100%;
-            padding: 0 45px 0 45px;
+            padding: 0 32px 0 32px;
             border: none;
             border-radius: 40px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             background: transparent;
             outline: none;
             color: var(--text-dark);
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
+            text-align: right;
         }
 
         .search-input::placeholder {
             color: #999;
             font-weight: 400;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             transition: color 0.3s ease;
         }
 
@@ -240,7 +228,7 @@
             color: #666;
         }
 
-        /* ===== TABS SECTION - PERFECT SPACING ON ALL DEVICES ===== */
+        /* ===== TABS SECTION ===== */
         .tabs-section {
             margin: 0rem 0 1.5rem;
             width: 100%;
@@ -261,10 +249,11 @@
             scrollbar-width: none;
             display: flex;
             align-items: center;
-            justify-content: space-around; /* Evenly space all tabs */
+            justify-content: center;
             width: 100%;
             -webkit-overflow-scrolling: touch;
             scroll-behavior: smooth;
+            direction: ltr;
         }
 
         .tabs-header::-webkit-scrollbar {
@@ -274,17 +263,20 @@
         .tab-item {
             display: inline-flex;
             align-items: center;
-            padding: 0.8rem 0.5rem;
-            font-size: 0.9rem;
+            justify-content: center;
+            padding: 0.6rem 0.8rem;
+            font-size: 0.8rem;
             font-weight: 500;
             color: white;
             border-bottom: 3px solid transparent;
             cursor: pointer;
             transition: all 0.2s;
             white-space: nowrap;
-            gap: 0.3rem;
+            gap: 0.25rem;
             position: relative;
-            flex: 0 1 auto; /* Allow tabs to shrink if needed */
+            flex: 0 0 auto;
+            text-align: center;
+            direction: rtl;
         }
 
         .tab-item:not(:last-child)::after {
@@ -293,13 +285,13 @@
             right: -2px;
             top: 20%;
             height: 60%;
-            width: 2px;
+            width: 1.5px;
             background: rgba(255, 255, 255, 0.5);
         }
 
         .tab-item i {
             color: white;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .tab-item:hover {
@@ -339,59 +331,11 @@
             display: block;
         }
 
-        /* Hide mobile dropdown completely */
         .mobile-tabs-select {
             display: none;
         }
 
-        /* Mobile-specific tab spacing */
-        @media (max-width: 600px) {
-            .tabs-header {
-                justify-content: space-between; /* Evenly space on mobile */
-                padding: 0 0.2rem;
-            }
-            
-            .tab-item {
-                padding: 0.7rem 0.2rem;
-                font-size: 0.8rem;
-                gap: 0.2rem;
-            }
-            
-            .tab-item i {
-                font-size: 0.8rem;
-            }
-            
-            /* Remove separator lines on mobile to save space */
-            .tab-item:not(:last-child)::after {
-                display: none;
-            }
-        }
-
-        /* Medium mobile devices */
-        @media (max-width: 480px) {
-            .tab-item {
-                padding: 0.6rem 0.15rem;
-                font-size: 0.75rem;
-            }
-            
-            .tab-item i {
-                font-size: 0.75rem;
-            }
-        }
-
-        /* Small mobile devices */
-        @media (max-width: 380px) {
-            .tab-item {
-                padding: 0.5rem 0.1rem;
-                font-size: 0.7rem;
-            }
-            
-            .tab-item i {
-                font-size: 0.7rem;
-            }
-        }
-
-        /* ===== IMAGE BOX - FADE EFFECT ===== */
+        /* ===== IMAGE BOX ===== */
         .nusrat-image-box {
             background: #f5f5f5;
             border-radius: 0;
@@ -411,7 +355,7 @@
             position: relative;
             width: 100%;
             height: 0;
-            padding-bottom: 40%;
+            padding-bottom: 56.25%;
             background: #e0e0e0;
         }
 
@@ -509,7 +453,7 @@
             left: 10px;
         }
 
-        /* ===== WELCOME SECTION - GREEN BACKGROUND ===== */
+        /* ===== WELCOME SECTION ===== */
         .welcome-section {
             background: var(--islamic-green);
             padding: 3rem 1rem;
@@ -712,7 +656,7 @@
             text-align: center;
         }
 
-        /* ===== VISION SECTION - COMPLETE ===== */
+        /* ===== VISION SECTION ===== */
         .vision-section-home {
             background: white;
             border-radius: 0;
@@ -1884,40 +1828,71 @@
 
         /* ===== MOBILE-SPECIFIC FIXES ===== */
         @media (max-width: 600px) {
-            /* Image box larger on mobile */
-            .carousel-slides {
-                padding-bottom: 56.25%;
-            }
-            
-            /* Search bar */
-            .search-section {
-                margin: 1rem 0 0.8rem;
+            /* Container padding for side spaces */
+            .container {
                 padding: 0 0.8rem;
             }
             
+            /* Search bar - STATIC AND SHORTER */
+            .search-section {
+                margin: 0.5rem 0 0.4rem;
+                padding: 0;
+            }
+            
             .search-container {
-                max-width: 100%;
+                max-width: 85%;
+                width: 85%;
+                margin: 0 auto;
             }
             
             .search-wrapper {
-                height: 44px;
+                height: 32px;
+                border-radius: 30px;
             }
             
             .search-input {
-                font-size: 0.9rem;
-                padding: 0 40px 0 40px;
+                font-size: 0.8rem;
+                padding: 0 32px 0 32px;
+                width: 100%;
+                text-align: right;
             }
             
             .search-icon {
-                left: 14px;
-                font-size: 0.9rem;
+                left: 10px;
+                font-size: 0.8rem;
+            }
+            
+            /* Tabs - centered with good spacing */
+            .tabs-header {
+                justify-content: center;
+                padding: 0;
+            }
+            
+            .tab-item {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.8rem;
+                gap: 0.25rem;
+            }
+            
+            .tab-item i {
+                font-size: 0.8rem;
+            }
+            
+            .tab-item:not(:last-child)::after {
+                right: -2px;
+                width: 1.5px;
+            }
+            
+            /* Image box larger */
+            .carousel-slides {
+                padding-bottom: 56.25%;
             }
             
             /* Navbar */
             .navbar {
                 flex-direction: column;
-                gap: 0.5rem;
-                padding: 0.8rem 0;
+                gap: 0.4rem;
+                padding: 0.6rem 0;
             }
             
             .nav-left, .nav-right {
@@ -1932,58 +1907,59 @@
             }
             
             .school-logo {
-                width: 45px;
-                height: 45px;
+                width: 40px;
+                height: 40px;
             }
             
             /* Welcome section */
             .welcome-section {
-                padding: 1.5rem 0.5rem;
+                padding: 1.2rem 0.5rem;
             }
             
             .welcome-card {
-                padding: 1.5rem 1rem;
+                padding: 1.2rem 1rem;
             }
             
             .welcome-title {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             
             .welcome-text p {
-                font-size: 1rem;
-                line-height: 1.6;
+                font-size: 0.95rem;
+                line-height: 1.5;
             }
             
             /* Mission & Vision */
             .mission-card-home, .vision-card-home {
-                padding: 2rem 0.5rem;
+                padding: 1.5rem 0.5rem;
             }
             
             .mission-card-home h3, .vision-card-home h3 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
             }
             
             .mission-list-home li {
-                font-size: 1rem;
+                font-size: 0.95rem;
                 flex-direction: column;
-                gap: 0.3rem;
+                gap: 0.2rem;
             }
             
             .vision-main {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
             .vision-middle, .vision-last {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
             
             /* Admission section */
             .admission-section {
-                padding: 1.5rem 1rem;
+                padding: 1.2rem 0.8rem;
             }
             
             .admission-header h2 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
             
             .programs-list {
@@ -1991,20 +1967,20 @@
             }
             
             .programs-card, .documents-card {
-                padding: 1.5rem;
+                padding: 1.2rem;
             }
             
             .deadline-box {
-                padding: 1.5rem;
+                padding: 1.2rem;
             }
             
             .deadline-box .date {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             
             /* News section */
             .news-section {
-                padding: 1.5rem;
+                padding: 1.2rem;
             }
             
             .news-grid {
@@ -2016,13 +1992,13 @@
             }
             
             .news-card.featured .news-image {
-                min-height: 200px;
+                min-height: 180px;
             }
             
             .newsletter-input {
                 flex-direction: column;
                 background: transparent;
-                gap: 0.8rem;
+                gap: 0.6rem;
             }
             
             .newsletter-input input,
@@ -2036,26 +2012,91 @@
             }
             
             .login-card {
-                padding: 1.5rem;
+                padding: 1.2rem;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.6rem;
+            }
+            
+            .search-container {
+                max-width: 88%;
+                width: 88%;
+            }
+            
+            .search-wrapper {
+                height: 30px;
+                border-radius: 25px;
+            }
+            
+            .search-input {
+                font-size: 0.75rem;
+                padding: 0 28px 0 28px;
+            }
+            
+            .search-icon {
+                left: 8px;
+                font-size: 0.75rem;
+            }
+            
+            .tab-item {
+                padding: 0.5rem 0.6rem;
+                font-size: 0.75rem;
+            }
+            
+            .tab-item i {
+                font-size: 0.75rem;
             }
         }
 
         /* Extra small devices */
         @media (max-width: 380px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+            
+            .search-container {
+                max-width: 90%;
+                width: 90%;
+            }
+            
+            .search-wrapper {
+                height: 28px;
+                border-radius: 22px;
+            }
+            
+            .search-input {
+                font-size: 0.7rem;
+                padding: 0 26px 0 26px;
+            }
+            
+            .search-icon {
+                left: 7px;
+                font-size: 0.7rem;
+            }
+            
             .carousel-slides {
                 padding-bottom: 60%;
             }
             
-            .search-input {
-                font-size: 0.85rem;
+            .tab-item {
+                padding: 0.4rem 0.5rem;
+                font-size: 0.7rem;
+            }
+            
+            .tab-item i {
+                font-size: 0.7rem;
             }
             
             .institute-name {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
             
             .welcome-title {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
         }
 
@@ -2073,7 +2114,7 @@
     </a>
 
     <div class="container">
-        <!-- Navbar with Language on Left, Logo on Right -->
+        <!-- Navbar -->
         <nav class="navbar">
             <div class="nav-left">
                 <div class="lang-switch">
@@ -2086,14 +2127,12 @@
                     <span data-en="TALLINDING ISLAMIC INSTITUTE" data-ar="معهد تلندينج الإسلامي">معهد تلندينج الإسلامي</span>
                 </div>
                 <div class="school-logo">
-                    <!-- ===== YOUR SCHOOL LOGO HERE - REPLACE THE SRC WITH YOUR TRANSPARENT PNG ===== -->
-                    <!-- ===== RECOMMENDED SIZE: 60x60px ===== -->
                     <img src="path/to/your-school-logo.png" alt="Tallinding Islamic Institute Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color: var(--primary-accent); font-size: 2rem;\'><i class=\'fas fa-school\'></i></span>';">
                 </div>
             </div>
         </nav>
 
-        <!-- Search Bar -->
+        <!-- Search Bar - STATIC AND SHORTER -->
         <div class="search-section">
             <div class="search-container" id="searchContainer">
                 <div class="search-wrapper">
@@ -2103,9 +2142,8 @@
             </div>
         </div>
 
-        <!-- Tabs Section - Perfect spacing on all devices -->
+        <!-- Tabs Section -->
         <div class="tabs-section">
-            <!-- Mobile dropdown hidden - not used -->
             <select class="mobile-tabs-select" id="mobileTabSelect" style="display: none;">
                 <option value="tab1">🏠 الرئيسية</option>
                 <option value="tab2">ℹ️ عن المعهد</option>
@@ -2114,27 +2152,26 @@
                 <option value="tab5">🔽 المزيد</option>
             </select>
 
-            <!-- Horizontal tabs for all devices - perfectly spaced -->
             <div class="tabs-header">
-                <div class="tab-item" data-tab="tab5">
-                    <i class="fas fa-ellipsis-h"></i>
-                    <span class="tab-text" data-en="More" data-ar="المزيد">المزيد</span>
-                </div>
-                <div class="tab-item" data-tab="tab4">
-                    <i class="fas fa-newspaper"></i>
-                    <span class="tab-text" data-en="News" data-ar="الأخبار">الأخبار</span>
-                </div>
-                <div class="tab-item" data-tab="tab3">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span class="tab-text" data-en="Admission" data-ar="القبول">القبول</span>
+                <div class="tab-item active" data-tab="tab1">
+                    <i class="fas fa-home"></i>
+                    <span class="tab-text" data-en="Home" data-ar="الرئيسية">الرئيسية</span>
                 </div>
                 <div class="tab-item" data-tab="tab2">
                     <i class="fas fa-info-circle"></i>
                     <span class="tab-text" data-en="About" data-ar="عن المعهد">عن المعهد</span>
                 </div>
-                <div class="tab-item active" data-tab="tab1">
-                    <i class="fas fa-home"></i>
-                    <span class="tab-text" data-en="Home" data-ar="الرئيسية">الرئيسية</span>
+                <div class="tab-item" data-tab="tab3">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="tab-text" data-en="Admission" data-ar="القبول">القبول</span>
+                </div>
+                <div class="tab-item" data-tab="tab4">
+                    <i class="fas fa-newspaper"></i>
+                    <span class="tab-text" data-en="News" data-ar="الأخبار">الأخبار</span>
+                </div>
+                <div class="tab-item" data-tab="tab5">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <span class="tab-text" data-en="More" data-ar="المزيد">المزيد</span>
                 </div>
             </div>
 
@@ -2196,7 +2233,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Navigation Arrows -->
                             <button class="carousel-arrow prev" onclick="changeSlide(-1)">
                                 <i class="fas fa-chevron-right"></i>
                             </button>
@@ -2204,7 +2240,6 @@
                                 <i class="fas fa-chevron-left"></i>
                             </button>
                             
-                            <!-- Navigation Dots -->
                             <div class="carousel-dots" id="carouselDots">
                                 <span class="dot active" onclick="currentSlide(1)"></span>
                                 <span class="dot" onclick="currentSlide(2)"></span>
@@ -2280,7 +2315,6 @@
 
                 <!-- Tab 2: About - WITH GAMBIA ISLAMIC UNION -->
                 <div class="tab-pane" id="tab2">
-                    <!-- Original About Section -->
                     <div class="about-section">
                         <div class="about-content">
                             <h2>
@@ -2299,7 +2333,6 @@
                         </div>
                     </div>
 
-                    <!-- GAMBIA ISLAMIC UNION CARD - UNDER ABOUT SECTION -->
                     <div class="gambia-union-card" style="margin-top: 2rem;">
                         <div class="union-icon">
                             <i class="fas fa-mosque"></i>
@@ -2346,7 +2379,6 @@
                             </p>
                         </div>
 
-                        <!-- Programs Card -->
                         <div class="programs-card">
                             <div class="requirement-icon">
                                 <i class="fas fa-book-open"></i>
@@ -2374,7 +2406,6 @@
                             </div>
                         </div>
 
-                        <!-- Required Documents Card -->
                         <div class="documents-card">
                             <div class="requirement-icon">
                                 <i class="fas fa-file-alt"></i>
@@ -2389,7 +2420,6 @@
                             </ul>
                         </div>
 
-                        <!-- DEADLINE BOX -->
                         <div class="deadline-box">
                             <h4 data-en="Application Deadline" data-ar="الموعد النهائي للتقديم">Application Deadline</h4>
                             <div class="date" data-en="August 15, 2026" data-ar="١٥ أغسطس ٢٠٢٦">August 15, 2026</div>
@@ -2653,13 +2683,11 @@
                 });
             });
             
-            // Search bar
+            // Search bar - STATIC (no expanding)
             const searchInput = document.getElementById('searchInput');
-            const searchContainer = document.getElementById('searchContainer');
             
             if (searchInput) {
-                searchInput.addEventListener('focus', () => searchContainer.classList.add('expanded'));
-                searchInput.addEventListener('blur', () => searchContainer.classList.remove('expanded'));
+                // Removed focus/blur events that caused expansion
                 searchInput.addEventListener('keypress', (e) => {
                     if (e.key === 'Enter' && e.target.value.trim()) {
                         const lang = document.querySelector('.lang-btn.active')?.getAttribute('data-lang') || 'ar';
